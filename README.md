@@ -14,6 +14,28 @@ The other server is the UI, where the user can type their sentences and see the 
 
 
 
+## Model
+
+Model structure:
+
+- Input Shape: train_data.length
+- Hidden Layer 1 Nodes: 64
+- Hidden Layer 2 Nodes: 16
+- Output Layer Nodes: 1
+- Loss: Binary Cross Entropy
+- Optimizer: Adam
+- Epochs: 30
+- Batch Size: 512
+
+
+This model pads all input arrays to a default size of 250, which are then fed into the model to be trained.
+
+Once the model is trained, it is saved to a local folder called "state".
+
+Then, the Javascript server is created which serves the model hierarchy to be imported by the main server. The main app server has the entire UI (which is pretty bad without any css) and is for the user to enter their own inputs.
+
+
+
 ## Development
 
 To run this script on your local PC, install the "IMDB Dataset" and copy the "imdb.vocab" file into the root directory of this project.
